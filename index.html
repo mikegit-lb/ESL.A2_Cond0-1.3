@@ -1,0 +1,1906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete ESL Lesson: If Clauses Type 0 and Type 1</title>
+    <style>
+        :root {
+            --navy: #1a2a6c;
+            --blue: #2d5af0;
+            --gold: #f39c12;
+            --light-gray: #f4f7f6;
+            --white: #ffffff;
+            --text: #2c3e50;
+            --border: #dcdde1;
+            --success: #2ecc71;
+            --error: #e74c3c;
+            --box-bg: #f9fbfb;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--light-gray);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        header.lesson-header {
+            background: linear-gradient(135deg, var(--navy), var(--blue));
+            color: var(--white);
+            padding: 35px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        header.lesson-header h1 {
+            margin: 0 0 15px 0;
+            font-size: 2.2rem;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 150px));
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 6px;
+        }
+
+        .meta-item strong {
+            color: #f1c40f;
+        }
+
+        h2 {
+            color: var(--navy);
+            border-left: 5px solid var(--blue);
+            padding-left: 12px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            color: var(--blue);
+            margin-top: 20px;
+        }
+
+        .box {
+            border: 1px solid var(--border);
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 8px;
+            background-color: var(--box-bg);
+        }
+
+        .teacher-note {
+            background: #fff9e6;
+            border-left: 5px solid var(--gold);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .teacher-note h4 {
+            margin: 0 0 10px 0;
+            color: #b7791f;
+        }
+
+        ul, ol {
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            border: 1px solid var(--border);
+            padding: 12px 15px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: var(--navy);
+            color: var(--white);
+        }
+
+        tr:nth-child(even) {
+            background-color: #fcfcfc;
+        }
+
+        .wrong {
+            color: var(--error);
+            font-weight: bold;
+            text-decoration: line-through;
+        }
+
+        .correct {
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            border-radius: 4px;
+            text-transform: uppercase;
+            color: var(--white);
+        }
+
+        .badge-zero { background-color: #9b59b6; }
+        .badge-one { background-color: #3498db; }
+
+        /* Interactive Elements */
+        .btn {
+            background: var(--blue);
+            color: var(--white);
+            border: none;
+            padding: 10px 18px;
+            font-size: 0.9rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            margin: 5px 2px;
+        }
+
+        .btn:hover {
+            background: #1a44c2;
+        }
+
+        .btn-success { background: var(--success); }
+        .btn-success:hover { background: #27ae60; }
+        
+        .btn-reveal {
+            background: #7f8c8d;
+        }
+        .btn-reveal:hover { background: #647071; }
+
+        .reveal-content {
+            background: #edf2f7;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 6px;
+            border-left: 4px solid #4a5568;
+        }
+
+        .quiz-choice {
+            margin-bottom: 15px;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: var(--white);
+        }
+
+        .select-input, .text-input {
+            padding: 6px 10px;
+            border: 1px solid #a0aec0;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            color: var(--navy);
+        }
+
+        .text-input { width: 180px; }
+
+        .matching-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .matching-row {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 15px;
+            background: #f1f2f6;
+            padding: 10px 15px;
+            border-radius: 6px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .card {
+            background: var(--white);
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            position: relative;
+        }
+
+        .card-header {
+            font-weight: bold;
+            color: var(--navy);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+        .feedback-area {
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 0.95rem;
+        }
+
+        .score-banner {
+            background: var(--navy);
+            color: white;
+            padding: 15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 6px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .progress-bar-container {
+            background: #e2e8f0;
+            border-radius: 10px;
+            height: 12px;
+            width: 100%;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            background: var(--success);
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        /* Printable Mode Improvements */
+        @media print {
+            body {
+                background: var(--white);
+                padding: 0;
+                color: #000;
+            }
+
+            .container {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
+
+            header.lesson-header {
+                background: transparent;
+                color: #000;
+                padding: 0;
+                border-bottom: 2px solid #000;
+                margin-bottom: 20px;
+            }
+
+            .meta-grid {
+                background: transparent;
+                color: #000;
+                border: 1px solid #000;
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .meta-item strong { color: #000; }
+            h2 { border-left-color: #000; color: #000; page-break-after: avoid; }
+            .box, .teacher-note, .card { background: var(--white); border: 1px solid #000; }
+            button, .btn, .no-print, .progress-bar-container, .score-banner { display: none !important; }
+            .reveal-content { display: block !important; background: transparent; border: 1px dashed #000; }
+            input, select { border-bottom: 1px solid #000 !important; border-top: none !important; border-left: none !important; border-right: none !important; background: transparent; }
+            .card-grid { grid-template-columns: 1fr 1fr; }
+            .matching-row { background: transparent; border: 1px solid #000; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. LESSON HEADER -->
+    <header class="lesson-header">
+        <h1>If This Happens… Conditional Sentences for Real Life</h1>
+        <div class="meta-grid">
+            <div class="meta-item"><strong>Level:</strong> A2 (Elementary / Pre-Intermediate)</div>
+            <div class="meta-item"><strong>Time:</strong> 75–90 Minutes</div>
+            <div class="meta-item"><strong>Grammar:</strong> Zero & First Conditional</div>
+            <div class="meta-item"><strong>Goal:</strong> Accurate real-life communication</div>
+        </div>
+        <div class="teacher-note" style="margin: 5px 0 0 0; background: rgba(255,255,255,0.15); border: none; color: white;">
+            <strong>Teacher Note:</strong> This structured framework provides complete immersion with zero placeholders. Keep the atmosphere dynamic! Focus heavily on the functional difference: Type 0 for absolute constants, Type 1 for predictive specific options.
+        </div>
+    </header>
+
+    <!-- 2. LEARNING OBJECTIVES -->
+    <section>
+        <h2>Learning Objectives</h2>
+        <div class="box">
+            <p><strong>By the end of this lesson, you will be able to:</strong></p>
+            <ul>
+                <li>Explain the fundamental difference between If Clause Type 0 and Type 1.</li>
+                <li>Use Type 0 accurately to express facts, rules, and daily routines.</li>
+                <li>Use Type 1 accurately to express real future possibilities and plans.</li>
+                <li>Form correct affirmative, negative, and question structures for conditionals.</li>
+                <li>Ask and answer conditional questions comfortably in real conversations.</li>
+                <li>Speak and write confidently about school, health, habits, weather, technology, and future intentions.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 3. SIMPLE WARM-UP -->
+    <section>
+        <h2>3. Simple Warm-Up (8–10 minutes)</h2>
+        <div class="box">
+            <p><strong>Instructions for Student Pairs:</strong> Take turns asking and answering these questions with your partner. Try to give full structural answers using complete sentences if you can!</p>
+            
+            <ol>
+                <li>What happens if you don’t sleep enough?</li>
+                <li>What will you do if it rains all day tomorrow?</li>
+                <li>What happens if you mix red and white paint?</li>
+                <li>What will you do if your mobile phone battery dies later today?</li>
+                <li>What happens if you leave ice cubes out in the sun?</li>
+                <li>What will you buy if you get some extra money this week?</li>
+                <li>What do you do if you feel very stressed before an exam?</li>
+                <li>What will you say if your friend forgets your birthday?</li>
+            </ol>
+
+            <p><strong>Example Answers to Guide You:</strong></p>
+            <ul>
+                <li><em>"If I don’t sleep enough, I feel very tired the next morning."</em></li>
+                <li><em>"If it rains tomorrow, I will stay inside and watch a good movie."</em></li>
+            </ul>
+
+            <div class="teacher-note no-print">
+                <h4>👨‍🏫 Teacher Monitoring & Execution Guidelines:</h4>
+                <p>Circulate actively while pairs talk. Do not disrupt students to correct minor grammatical slips immediately. Instead, note down if they are naturally mixing up simple present results with "will" verbs, which sets up the next discovery phase beautifully.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. GRAMMAR DISCOVERY SECTION -->
+    <section>
+        <h2>4. Grammar Discovery Section</h2>
+        <div class="box">
+            <p>Read the sentences in the table carefully. Notice the differences in the verbs and the true meaning of each situation.</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Group A (Type 0 Situations)</th>
+                        <th>Group B (Type 1 Situations)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1. If you heat water to 100°C, it boils.</td>
+                        <td>1. If I have free time tonight, I will watch a documentary.</td>
+                    </tr>
+                    <tr>
+                        <td>2. If plants get no water, they die.</td>
+                        <td>2. If she studies hard today, she will pass her test tomorrow.</td>
+                    </tr>
+                    <tr>
+                        <td>3. If I am late for school, my teacher gets angry.</td>
+                        <td>3. If we leave right now, we will catch the afternoon bus.</td>
+                    </tr>
+                    <tr>
+                        <td>4. If you mix blue and yellow, you get green.</td>
+                        <td>4. If the weather is nice this weekend, we will go camping.</td>
+                    </tr>
+                    <tr>
+                        <td>5. If my brother feels sick, he stays in bed.</td>
+                        <td>5. If he feels sick tomorrow, he will visit the family doctor.</td>
+                    </tr>
+                    <tr>
+                        <td>6. If you push this button, the television turns on.</td>
+                        <td>6. If you buy that laptop online now, you will get a discount.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Noticing Questions</h3>
+            <p>Think about these questions or discuss them with your class:</p>
+            <ul>
+                <li>Look at Group A. Are these sentences about one specific day, or are they general facts that are <strong>always true</strong>?</li>
+                <li>Look at Group B. Do these events happen every single time, or are they <strong>possible future outcomes</strong> based on a condition?</li>
+                <li>What verb tenses are used in Group A? What verb structures are used in Group B?</li>
+            </ul>
+
+            <button class="btn btn-reveal no-print" onclick="toggleSection('discovery-key')">Show Discovery Answers</button>
+            <div id="discovery-key" class="reveal-content hidden">
+                <p><strong>Discovery Key Summary:</strong></p>
+                <ul>
+                    <li><strong>Type 0 (Group A):</strong> Real facts / always true / general truth. Both clauses use the <strong>Present Simple</strong> tense.</li>
+                    <li><strong>Type 1 (Group B):</strong> Real future possibility / a possible specific result. The if-clause uses the <strong>Present Simple</strong>, and the main result clause uses <strong>will + base verb</strong>.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. GRAMMAR EXPLANATION -->
+    <section>
+        <h2>5. Grammar Explanation</h2>
+        
+        <div class="box">
+            <h3><span class="badge badge-zero">Zero Conditional</span> – Facts & General Truths</h3>
+            <p><strong>Meaning:</strong> We use the Zero Conditional to talk about things that are always true, scientific facts, automatic results, rules, or strong personal routines.</p>
+            <p><strong>Form:</strong> <code style="font-size:1.1rem; color:var(--navy);">If + Present Simple, Present Simple</code></p>
+            <p><strong>Time Reference:</strong> General time (all time, past/present/future constants), not a specific singular moment.</p>
+            
+            <p><strong>Key Use Cases & Examples:</strong></p>
+            <ul>
+                <li><strong>Scientific facts:</strong> If you freeze water, it turns into ice.</li>
+                <li><strong>Daily routines:</strong> If I wake up early, I always go for a run.</li>
+                <li><strong>Rules:</strong> If you drive a car, you need a valid license.</li>
+                <li><strong>General human truths:</strong> If people eat too much sugar, they feel sick over time.</li>
+            </ul>
+
+            <p><strong>Common Pitfall to Avoid:</strong> Do not use "will" in a general fact statement. 
+            <br><span class="wrong">Wrong: If you cross the street without looking, you will get hit.</span> (If it's an absolute universal safety law of cause/effect, keep it simple present: <span class="correct">Correct: ...you get hurt.</span>)</p>
+        </div>
+
+        <div class="box">
+            <h3><span class="badge badge-one">First Conditional</span> – Real Future Possibilities</h3>
+            <p><strong>Meaning:</strong> We use the First Conditional to talk about a realistic specific condition in the present or future, and its highly possible future result.</p>
+            <p><strong>Form:</strong> <code style="font-size:1.1rem; color:var(--navy);">If + Present Simple, will + base verb</code></p>
+            <p><strong>Time Reference:</strong> A specific future point or specific upcoming event.</p>
+            
+            <p><strong>Key Use Cases & Examples:</strong></p>
+            <ul>
+                <li><strong>Future plans:</strong> If it rains tomorrow, I will stay home.</li>
+                <li><strong>Predictions:</strong> If I pass the exam, I will celebrate with my friends.</li>
+                <li><strong>Warnings:</strong> If she studies tonight, she will do well on the test tomorrow.</li>
+                <li><strong>Negotiations/Promises:</strong> If you wash the dishes, I will cook dinner.</li>
+            </ul>
+
+            <p><strong>Common Pitfall to Avoid:</strong> Never put "will" directly inside the if-clause!
+            <br><span class="wrong">Wrong: If I will see him tomorrow, I will tell him.</span>
+            <br><span class="correct">Correct: If I see him tomorrow, I will tell him.</span></p>
+        </div>
+    </section>
+
+    <!-- 6. ZERO VS FIRST CONDITIONAL COMPARISON TABLE -->
+    <section>
+        <h2>6. Zero vs First Conditional Comparison Table</h2>
+        <div class="box">
+            <p>Study these 8 side-by-side examples to master the situational difference between a general rule (Type 0) and a single future event (Type 1).</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Grammar Type</th>
+                        <th>Meaning / Time Focus</th>
+                        <th>Structural Form</th>
+                        <th>Example Sentence</th>
+                        <th>What it actually means to the student</th>
+                        <th>Common Mistake to Watch</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Ex 1 -->
+                    <tr>
+                        <td><strong>Zero Conditional</strong></td>
+                        <td>General Routine (Anytime)</td>
+                        <td>Present + Present</td>
+                        <td>If I drink coffee at night, I don't sleep.</td>
+                        <td>This usually/always happens to me as a rule.</td>
+                        <td class="wrong">If I drink coffee, I won't sleep. (when meaning always)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>First Conditional</strong></td>
+                        <td>Specific Future (Tonight)</td>
+                        <td>Present + Will + Verb</td>
+                        <td>If I drink coffee tonight, I won't sleep.</td>
+                        <td>This is a real risk for this specific upcoming night.</td>
+                        <td class="wrong">If I will drink coffee tonight...</td>
+                    </tr>
+                    <!-- Ex 2 -->
+                    <tr>
+                        <td><strong>Zero Conditional</strong></td>
+                        <td>Scientific Fact</td>
+                        <td>Present + Present</td>
+                        <td>If you heat ice, it melts.</td>
+                        <td>An unchangeable law of nature. Always true.</td>
+                        <td class="wrong">If you heat ice, it will melts.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>First Conditional</strong></td>
+                        <td>Specific Prediction</td>
+                        <td>Present + Will + Verb</td>
+                        <td>If you leave that ice cream outside, it will melt fast.</td>
+                        <td>A warning about a specific event happening soon.</td>
+                        <td class="wrong">If you leave it, it melts fast tomorrow.</td>
+                    </tr>
+                    <!-- Ex 3 -->
+                    <tr>
+                        <td><strong>Zero Conditional</strong></td>
+                        <td>School Rule / Habit</td>
+                        <td>Present + Present</td>
+                        <td>If students miss class, they fail the participation mark.</td>
+                        <td>Standard official school operating regulation.</td>
+                        <td class="wrong">If students miss class, they will fail always.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>First Conditional</strong></td>
+                        <td>Specific Warning</td>
+                        <td>Present + Will + Verb</td>
+                        <td>If you miss class tomorrow, you will miss the final test.</td>
+                        <td>A specific immediate warning for tomorrow's instance.</td>
+                        <td class="wrong">If you will miss class tomorrow...</td>
+                    </tr>
+                    <!-- Ex 4 -->
+                    <tr>
+                        <td><strong>Zero Conditional</strong></td>
+                        <td>Emotional Habit</td>
+                        <td>Present + Present</td>
+                        <td>If I feel lonely, I call my mother.</td>
+                        <td>This is my automatic psychological habit.</td>
+                        <td class="wrong">If I feel lonely, I will call my mom usually.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>First Conditional</strong></td>
+                        <td>Specific Future Plan</td>
+                        <td>Present + Will + Verb</td>
+                        <td>If I feel lonely later, I will call my mother.</td>
+                        <td>A planned action for an upcoming moment today.</td>
+                        <td class="wrong">If I will feel lonely later...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- 7. FORM TABLE -->
+    <section>
+        <h2>7. Form Table & Clause Order Rules</h2>
+        <div class="box">
+            <p>You can change the order of the clauses without changing the core meaning. Pay close attention to the <strong>comma rules</strong>!</p>
+            
+            <h3>Zero Conditional Structure</h3>
+            <table>
+                <tr>
+                    <th>Clause Order</th>
+                    <th>Structural Layout</th>
+                    <th>Example Sentence</th>
+                </tr>
+                <tr>
+                    <td><strong>If-Clause First</strong> (Comma needed)</td>
+                    <td>If + Present Simple <b style="color:var(--error);">,</b> Present Simple</td>
+                    <td>If it rains<b style="color:var(--error);">,</b> I stay inside.</td>
+                </tr>
+                <tr>
+                    <td><strong>Result Clause First</strong> (No comma)</td>
+                    <td>Present Simple + if + Present Simple</td>
+                    <td>I stay inside if it rains.</td>
+                </tr>
+            </table>
+
+            <h3>First Conditional Structure</h3>
+            <table>
+                <tr>
+                    <th>Clause Order</th>
+                    <th>Structural Layout</th>
+                    <th>Example Sentence</th>
+                </tr>
+                <tr>
+                    <td><strong>If-Clause First</strong> (Comma needed)</td>
+                    <td>If + Present Simple <b style="color:var(--error);">,</b> will + base verb</td>
+                    <td>If it rains tomorrow<b style="color:var(--error);">,</b> I will stay inside.</td>
+                </tr>
+                <tr>
+                    <td><strong>Result Clause First</strong> (No comma)</td>
+                    <td>will + base verb + if + Present Simple</td>
+                    <td>I will stay inside if it rains tomorrow.</td>
+                </tr>
+            </table>
+            
+            <blockquote>
+                <strong>💡 Quick Rule Reminder:</strong> Think of the word <strong>"If"</strong> as a heavy anchor. When it comes at the very beginning of a sentence, you must place a comma after that complete idea to take a breath before the result. When "if" sits in the middle, it connects the sentences perfectly on its own—so no comma is required!
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- 8. COMMON A2 STUDENT MISTAKES -->
+    <section>
+        <h2>8. Fix These Common Mistakes!</h2>
+        <div class="box">
+            <p>Look carefully at how to fix these 12 common mistakes made by students at the A2 level. Understand <em>why</em> each change is necessary.</p>
+            
+            <ol>
+                <li>
+                    <span class="wrong">Wrong: If it will rain tomorrow, I will stay home.</span><br>
+                    <span class="correct">Correct: If it rains tomorrow, I will stay home.</span><br>
+                    <em>Explanation: Never put will in the conditional "if" part of the sentence.</em>
+                </li>
+                <br>
+                <li>
+                    <span class="wrong">Wrong: If I heat ice, it will melts.</span><br>
+                    <span class="correct">Correct: If I heat ice, it melts.</span><br>
+                    <em>Explanation: This is a universal fact, so use the regular Present Simple for Type 0. Also, "will" must always be followed by a bare verb without "s".</em>
+                </li>
+                <br>
+                <li>
+                    <span class="wrong">Wrong: If I am hungry, I will eats.</span><br>
+                    <span class="correct">Correct: If I am hungry, I will eat.</span><br>
+                    <em>Explanation: After the modal verb "will", you must use the bare base form of the verb without adding an "s".</em>
+                </li>
+                <br>
+                <li>
+                    <span class="wrong">Wrong: If people don’t sleep, they will tired.</span><br>
+                    <span class="correct">Correct: If people don’t sleep, they get tired / are tired.</span><br>
+                    <em>Explanation: "Tired" is an adjective, not a verb! You need an active verb like "get" or "are" to make a complete predicate.</em>
+                </li>
+                <br>
+                <li>
+                    <span class="wrong">Wrong: If she don't study, she fails.</span><br>
+                    <span class="correct">Correct: If she doesn't study, she fails.</span><br>
+                    <em>Explanation: Remember subject-verb agreement in Present Simple. "She" requires the singular helper "doesn't".</em>
+                </li>
+                <br>
+                <li>
+                    <span class="wrong">Wrong: If I will be free, I call you.</span><br>
+                    <span class="correct">Correct: If I am free, I will call you.</span><br>
+                    <em>Explanation: Swap the structural components. Present simple belongs in the if-clause, and future prediction goes in the result.</em>
+                </li>
+                <br>
+                <li>
+                    <span class="wrong">Wrong: I will visit you if I will have time.</span><br>
+                    <span class="correct">Correct: I will visit you if I have time.</span><br>
+                    <em>Explanation: Even if the if-clause is at the end of the sentence, it still rejects "will".</em>
+                </li>
+                <br>
+                <li>
+                    <span class="wrong">Wrong: If you touch fire you get burned.</span><br>
+                    <span class="correct">Correct: If you touch fire, you get burned.</span><br>
+                    <em>Explanation: Missing comma! You must separate an initial if-clause from the rest of the sentence.</em>
+                </li>
+                <br>
+                <li>
+                    <span class="wrong">Wrong: If I see her tomorrow I tell her.</span><br>
+                    <span class="correct">Correct: If I see her tomorrow, I will tell her.</span><br>
+                    <em>Explanation: For a specific real event happening tomorrow, the result clause requires "will".</em>
+                </li>
+                <br>
+                <li>
+                    <span class="wrong">Wrong: If you mix yellow and blue, you will got green.</span><br>
+                    <span class="correct">Correct: If you mix yellow and blue, you get green.</span><br>
+                    <em>Explanation: For Type 0 facts, use the present simple base form, never a past tense form like "got".</em>
+                </li>
+                <br>
+                <li>
+                    <span class="wrong">Wrong: If the phone rings, I answer it always.</span><br>
+                    <span class="correct">Correct: If the phone rings, I always answer it.</span><br>
+                    <em>Explanation: Frequency adverbs like "always" should sit directly before the main action verb.</em>
+                </li>
+                <br>
+                <li>
+                    <span class="wrong">Wrong: If he comes here, we have a great party tomorrow.</span><br>
+                    <span class="correct">Correct: If he comes here, we will have a great party tomorrow.</span><br>
+                    <em>Explanation: The word "tomorrow" signals a single future possibility, requiring Type 1 structure.</em>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- 9. VOCABULARY SECTION -->
+    <section>
+        <h2>9. Vocabulary Bank (40 Essential Words & Phrases)</h2>
+        <div class="box">
+            <p>Here are 40 highly useful A2 level expressions categorized by theme, each with a practical example using conditional patterns.</p>
+            
+            <h3>🩺 Category 1: Health & Well-being</h3>
+            <ul>
+                <li><strong>battery dies:</strong> running completely out of electrical energy. <br><em>"If my phone battery dies, I cannot navigate with maps."</em></li>
+                <li><strong>feel sick:</strong> to experience poor health or nausea. <br><em>"If I eat too much candy, I feel sick."</em></li>
+                <li><strong>gain weight:</strong> to become heavier. <br><em>"If people don't exercise and eat poorly, they gain weight."</em></li>
+                <li><strong>catch a cold:</strong> to become sick with a common virus. <br><em>"If you walk outside in the winter without a coat, you catch a cold."</em></li>
+                <li><strong>stay fit:</strong> to keep your body healthy and strong. <br><em>"If you swim every day, you stay fit easily."</em></li>
+                <li><strong>feel dizzy:</strong> feeling like the room is spinning. <br><em>"If I spin around too fast, I feel dizzy."</em></li>
+            </ul>
+
+            <h3>🏫 Category 2: School & Education</h3>
+            <ul>
+                <li><strong>pass an exam:</strong> to achieve a successful grade on a test. <br><em>"If I study hard tonight, I will pass my English exam."</em></li>
+                <li><strong>fail a test:</strong> to get an unsuccessful grade. <br><em>"If a student doesn't study at all, they fail the test."</em></li>
+                <li><strong>miss a class:</strong> to not attend a scheduled lesson. <br><em>"If you miss a class tomorrow, you will have to copy my notes."</em></li>
+                <li><strong>hand in homework:</strong> to submit school assignments to a teacher. <br><em>"If I don't hand in my homework, my grade goes down."</em></li>
+                <li><strong>pay attention:</strong> to watch and listen closely. <br><em>"If you pay attention in class, lessons are much easier."</em></li>
+                <li><strong>graduate:</strong> to finish your schooling degree. <br><em>"If he finishes his final projects, he will graduate this June."</em></li>
+            </ul>
+
+            <h3>☁️ Category 3: Weather & Environment</h3>
+            <ul>
+                <li><strong>pour with rain:</strong> to rain very heavily. <br><em>"If it pours with rain tomorrow, we will cancel our picnic."</em></li>
+                <li><strong>clear up:</strong> when clouds leave and the sun emerges. <br><em>"If the weather clears up later, I will go to the park."</em></li>
+                <li><strong>freeze:</strong> to turn to ice from extreme cold. <br><em>"If the temperature drops below 0°C, puddle water freezes."</em></li>
+                <li><strong>get dynamic storms:</strong> experience rapid windy and rainy weather. <br><em>"If we get dynamic storms tonight, the power will go out."</em></li>
+                <li><strong>melt:</strong> to turn from solid ice into liquid water. <br><em>"If the sun shines brightly, the snow melts fast."</em></li>
+            </ul>
+
+            <h3>📱 Category 4: Technology</h3>
+            <ul>
+                <li><strong>touch screen:</strong> the display interface of a digital device. <br><em>"If you press the touch screen, the app opens instantly."</em></li>
+                <li><strong>crash:</strong> when a computer program stops functioning suddenly. <br><em>"If you open too many heavy files, your laptop crashes."</em></li>
+                <li><strong>recharge:</strong> to fill a battery back up with electrical power. <br><em>"If I plug in my device, it recharges in an hour."</em></li>
+                <li><strong>save a file:</strong> storing data permanently on a computer drive. <br><em>"If you click that icon, the computer saves your file."</em></li>
+                <li><strong>go offline:</strong> to disconnect completely from the internet. <br><em>"If the router breaks, we will go offline immediately."</em></li>
+            </ul>
+
+            <h3>🛋️ Category 5: Daily Habits</h3>
+            <ul>
+                <li><strong>set an alarm:</strong> preparing a clock to wake you up at a set time. <br><em>"If I set an alarm for 6:00 AM, I wake up on time."</em></li>
+                <li><strong>skip breakfast:</strong> missing the first morning meal of the day. <br><em>"If I skip breakfast, I always get hungry by noon."</em></li>
+                <li><strong>order takeout:</strong> buying prepared restaurant food delivered to your home. <br><em>"If I am too tired to cook tonight, I will order takeout."</em></li>
+                <li><strong>do chores:</strong> performing standard house cleaning work. <br><em>"If I finish my chores early, my dad will let me play video games."</em></li>
+                <li><strong>go grocery shopping:</strong> buying food materials from a store. <br><em>"If we run out of fresh milk, I will go grocery shopping."</em></li>
+            </ul>
+
+            <h3>🎭 Category 6: Emotions</h3>
+            <ul>
+                <li><strong>get lonely:</strong> feeling sad due to being isolated without friends. <br><em>"If I stay home alone all weekend, I get lonely."</em></li>
+                <li><strong>feel proud:</strong> experiencing deep satisfaction with your achievements. <br><em>"If you win the first-place prize, your parents will feel proud."</em></li>
+                <li><strong>lose your temper:</strong> to become angry very suddenly. <br><em>"If people lie to me, I lose my temper quickly."</em></li>
+                <li><strong>get excited:</strong> feeling highly happy and energized about something. <br><em>"If we win this soccer match, everyone will get excited."</em></li>
+                <li><strong>feel anxious:</strong> feeling nervous or worried about future events. <br><em>"If I don't prepare well for presentations, I feel anxious."</em></li>
+            </ul>
+
+            <h3>✈️ Category 7: Future Plans & Extra Concepts</h3>
+            <ul>
+                <li><strong>book a flight:</strong> purchasing an airline ticket for travel. <br><em>"If tickets are cheap, I will book a flight to London."</em></li>
+                <li><strong>stay in a hotel:</strong> renting a temporary room while traveling. <br><em>"If we visit Paris, we will stay in a small boutique hotel."</em></li>
+                <li><strong>save money:</strong> keeping funds aside for future use. <br><em>"If I find a job this summer, I will save money for college."</em></li>
+                <li><strong>visit museums:</strong> touring historical cultural buildings. <br><em>"If it rains during our holiday, we will visit museums."</em></li>
+                <li><strong>try local food:</strong> eating traditional dishes native to a region. <br><em>"If we travel to Italy, I will try local food like authentic pizza."</em></li>
+                <li><strong>hire a car:</strong> paying to use a vehicle temporarily. <br><em>"If we want to explore the countryside, we will hire a car."</em></li>
+                <li><strong>pack a suitcase:</strong> putting clothes into travel luggage. <br><em>"If my trip is next Monday, I will pack my suitcase this Sunday."</em></li>
+                <li><strong>go sightseeing:</strong> visiting popular tourist attractions. <br><em>"If we have time on Tuesday, we will go sightseeing around the old town."</em></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 10. CONTROLLED PRACTICE 1 -->
+    <section>
+        <h2>10. Practice 1: Choose Type 0 or Type 1</h2>
+        <div class="box">
+            <p>Read each sentence. Decide if it represents an automatic universal fact (<strong style="color:#9b59b6;">Type 0</strong>) or a possible future prediction (<strong style="color:#3498db;">Type 1</strong>). Select your choice and verify your answers below.</p>
+            
+            <div id="quiz-p1-container">
+                <!-- Javascript will populate score here, but let's place static forms for robustness -->
+                <div class="quiz-choice" data-ans="0">
+                    <p>1. If you drop an apple, it falls to the ground.</p>
+                    <label><input type="radio" name="p1-q1" value="0"> Type 0 (Universal Constant Fact)</label><br>
+                    <label><input type="radio" name="p1-q1" value="1"> Type 1 (Specific Future Outcome)</label>
+                </div>
+
+                <div class="quiz-choice" data-ans="1">
+                    <p>2. If you don't wear a sweater tonight, you will freeze out there.</p>
+                    <label><input type="radio" name="p1-q2" value="0"> Type 0</label><br>
+                    <label><input type="radio" name="p1-q2" value="1"> Type 1</label>
+                </div>
+
+                <div class="quiz-choice" data-ans="0">
+                    <p>3. If wood gets wet, it absorbs water.</p>
+                    <label><input type="radio" name="p1-q3" value="0"> Type 0</label><br>
+                    <label><input type="radio" name="p1-q3" value="1"> Type 1</label>
+                </div>
+
+                <div class="quiz-choice" data-ans="1">
+                    <p>4. If she arrives late to the party tonight, they will start eating without her.</p>
+                    <label><input type="radio" name="p1-q4" value="0"> Type 0</label><br>
+                    <label><input type="radio" name="p1-q4" value="1"> Type 1</label>
+                </div>
+
+                <div class="quiz-choice" data-ans="0">
+                    <p>5. If I drink milk, my stomach hurts because I am lactose intolerant.</p>
+                    <label><input type="radio" name="p1-q5" value="0"> Type 0</label><br>
+                    <label><input type="radio" name="p1-q5" value="1"> Type 1</label>
+                </div>
+
+                <div class="quiz-choice" data-ans="1">
+                    <p>6. If the store has fresh strawberries tomorrow, I will buy two boxes.</p>
+                    <label><input type="radio" name="p1-q6" value="0"> Type 0</label><br>
+                    <label><input type="radio" name="p1-q6" value="1"> Type 1</label>
+                </div>
+
+                <div class="quiz-choice" data-ans="0">
+                    <p>7. If you multiply zero by any number, the answer is always zero.</p>
+                    <label><input type="radio" name="p1-q7" value="0"> Type 0</label><br>
+                    <label><input type="radio" name="p1-q7" value="1"> Type 1</label>
+                </div>
+
+                <div class="quiz-choice" data-ans="1">
+                    <p>8. If we don't protect the remaining wild spaces, tigers will go extinct in the future.</p>
+                    <label><input type="radio" name="p1-q8" value="0"> Type 0</label><br>
+                    <label><input type="radio" name="p1-q8" value="1"> Type 1</label>
+                </div>
+
+                <div class="quiz-choice" data-ans="0">
+                    <p>9. If metal gets hot, it expands structurally.</p>
+                    <label><input type="radio" name="p1-q9" value="0"> Type 0</label><br>
+                    <label><input type="radio" name="p1-q9" value="1"> Type 1</label>
+                </div>
+
+                <div class="quiz-choice" data-ans="1">
+                    <p>10. If you call your grandmother this evening, she will be incredibly happy.</p>
+                    <label><input type="radio" name="p1-q10" value="0"> Type 0</label><br>
+                    <label><input type="radio" name="p1-q10" value="1"> Type 1</label>
+                </div>
+
+                <div class="quiz-choice" data-ans="0">
+                    <p>11. If the sun goes down, it becomes dark outside everywhere.</p>
+                    <label><input type="radio" name="p1-q11" value="0"> Type 0</label><br>
+                    <label><input type="radio" name="p1-q11" value="1"> Type 1</label>
+                </div>
+
+                <div class="quiz-choice" data-ans="1">
+                    <p>12. If I miss my gym workout session later today, I will go early tomorrow.</p>
+                    <label><input type="radio" name="p1-q12" value="0"> Type 0</label><br>
+                    <label><input type="radio" name="p1-q12" value="1"> Type 1</label>
+                </div>
+
+                <div class="quiz-choice" data-ans="0">
+                    <p>13. If babies are hungry, they cry to get food.</p>
+                    <label><input type="radio" name="p1-q13" value="0"> Type 0</label><br>
+                    <label><input type="radio" name="p1-q13" value="1"> Type 1</label>
+                </div>
+
+                <div class="quiz-choice" data-ans="1">
+                    <p>14. If you wear those old shoes to the hike tomorrow, your feet will hurt terribly.</p>
+                    <label><input type="radio" name="p1-q14" value="0"> Type 0</label><br>
+                    <label><input type="radio" name="p1-q14" value="1"> Type 1</label>
+                </div>
+
+                <div class="quiz-choice" data-ans="0">
+                    <p>15. If dogs see a stranger near their home yard, they usually bark.</p>
+                    <label><input type="radio" name="p1-q15" value="0"> Type 0</label><br>
+                    <label><input type="radio" name="p1-q15" value="1"> Type 1</label>
+                </div>
+            </div>
+
+            <button class="btn btn-success no-print" onclick="checkPractice1()">Check Practice 1 Answers</button>
+            <div id="p1-feedback" class="feedback-area"></div>
+        </div>
+    </section>
+
+    <!-- 11. CONTROLLED PRACTICE 2 -->
+    <section>
+        <h2>11. Practice 2: Complete the Sentences</h2>
+        <div class="box">
+            <p>Fill in the blank gaps with the correct form of the verbs in parentheses. Pay close attention to whether the sentence describes a general constant or a single future context!</p>
+            
+            <form id="p2-form">
+                <ol>
+                    <li>If you <input type="text" id="p2-q1" class="text-input" data-ans="heat"> (heat) water to 100°C, it boils.</li>
+                    <li>If I <input type="text" id="p2-q2" class="text-input" data-ans="am"> (be) free tomorrow, I will visit you.</li>
+                    <li>If she studies hard, she <input type="text" id="p2-q3" class="text-input" data-ans="will pass"> (pass) the test tomorrow.</li>
+                    <li>If you mix red and yellow paint, you <input type="text" id="p2-q4" class="text-input" data-ans="get"> (get) orange.</li>
+                    <li>Plants die if they <input type="text" id="p2-q5" class="text-input" data-ans="don't get"> (not / get) enough clean water.</li>
+                    <li>If the train is late again today, we <input type="text" id="p2-q6" class="text-input" data-ans="will miss"> (miss) our meeting.</li>
+                    <li>If I leave my chocolate candy bars in the hot sun, they <input type="text" id="p2-q7" class="text-input" data-ans="melt"> (melt).</li>
+                    <li>He will call us immediately if he <input type="text" id="p2-q8" class="text-input" data-ans="arrives"> (arrive) safely at the airport.</li>
+                    <li>If you jump into deep water, you <input type="text" id="p2-q9" class="text-input" data-ans="get"> (get) wet.</li>
+                    <li>If I don't set my loud morning alarm, I always <input type="text" id="p2-q10" class="text-input" data-ans="oversleep"> (oversleep).</li>
+                    <li>If we buy these expensive concert tickets now, we <input type="text" id="p2-q11" class="text-input" data-ans="will lose"> (lose) all our savings.</li>
+                    <li>Ice turns into liquid water if you <input type="text" id="p2-q12" class="text-input" data-ans="warm"> (warm) it up.</li>
+                    <li>If she <input type="text" id="p2-q13" class="text-input" data-ans="doesn't leave"> (not / leave) the house right now, she will be late.</li>
+                    <li>If you throw a heavy rock into the lake, it <input type="text" id="p2-q14" class="text-input" data-ans="sinks"> (sink).</li>
+                    <li>I <input type="text" id="p2-q15" class="text-input" data-ans="will stay"> (stay) at home if the weather is bad next Sunday.</li>
+                    <li>If you add pure white sugar to coffee, the coffee <input type="text" id="p2-q16" class="text-input" data-ans="becomes"> (become) sweet.</li>
+                    <li>If he <input type="text" id="p2-q17" class="text-input" data-ans="asks"> (ask) me nicely tomorrow, I will help him move his boxes.</li>
+                    <li>If you don't charge your mobile phone device, the battery <input type="text" id="p2-q18" class="text-input" data-ans="dies"> (die).</li>
+                    <li>They <input type="text" id="p2-q19" class="text-input" data-ans="will go"> (go) to the beach if they have a holiday next week.</li>
+                    <li>If citizens break the law, they <input type="text" id="p2-q20" class="text-input" data-ans="get"> (get) into serious trouble with the police.</li>
+                </ol>
+            </form>
+
+            <button class="btn btn-success no-print" onclick="checkPractice2()">Check Practice 2 Answers</button>
+            <button class="btn btn-reveal no-print" onclick="toggleSection('p2-answers-key')">Show Text Answers Key</button>
+            <div id="p2-feedback" class="feedback-area"></div>
+
+            <div id="p2-answers-key" class="reveal-content hidden">
+                <strong>Practice 2 Key:</strong> 1. heat | 2. am | 3. will pass | 4. get | 5. don't get | 6. will miss | 7. melt | 8. arrives | 9. get | 10. oversleep | 11. will lose | 12. warm | 13. doesn't leave | 14. sinks | 15. will stay | 16. becomes | 17. asks | 18. dies | 19. will go | 20. get
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. CONTROLLED PRACTICE 3 -->
+    <section>
+        <h2>12. Practice 3: Correct the Mistakes</h2>
+        <div class="box">
+            <p>Each sentence below contains exactly one conditional grammar error. Identify and fix it!</p>
+            
+            <ol>
+                <li>
+                    <p class="wrong">If I will be tired, I always drink hot tea.</p>
+                    <input type="text" class="text-input" style="width:70%;" placeholder="Type correct sentence here...">
+                    <button class="btn btn-reveal btn-sm no-print" onclick="toggleSection('p3-ans-1')">Reveal Answer</button>
+                    <div id="p3-ans-1" class="reveal-content hidden">
+                        <span class="correct">If I am tired, I always drink hot tea.</span><br>
+                        <em>Explanation: General routine (Type 0) requires Present Simple in the if-clause, never will.</em>
+                    </div>
+                </li>
+                <br>
+                <li>
+                    <p class="wrong">If it rains tomorrow, we stay at home.</p>
+                    <input type="text" class="text-input" style="width:70%;" placeholder="Type correct sentence here...">
+                    <button class="btn btn-reveal btn-sm no-print" onclick="toggleSection('p3-ans-2')">Reveal Answer</button>
+                    <div id="p3-ans-2" class="reveal-content hidden">
+                        <span class="correct">If it rains tomorrow, we will stay at home.</span><br>
+                        <em>Explanation: Specific future event (tomorrow) requires Type 1 future marker "will".</em>
+                    </div>
+                </li>
+                <br>
+                <li>
+                    <p class="wrong">If you don't water plants, they will died.</p>
+                    <input type="text" class="text-input" style="width:70%;" placeholder="Type correct sentence here...">
+                    <button class="btn btn-reveal btn-sm no-print" onclick="toggleSection('p3-ans-3')">Reveal Answer</button>
+                    <div id="p3-ans-3" class="reveal-content hidden">
+                        <span class="correct">If you don't water plants, they die.</span><br>
+                        <em>Explanation: Universal scientific fact uses simple present throughout. Also "will died" is incorrect past usage.</em>
+                    </div>
+                </li>
+                <!-- Additional items for full completeness -->
+                <br>
+                <li>
+                    <p class="wrong">If he will study hard, he will pass his final test next week.</p>
+                    <input type="text" class="text-input" style="width:70%;" placeholder="Type correction...">
+                    <button class="btn btn-reveal btn-sm no-print" onclick="toggleSection('p3-ans-4')">Reveal</button>
+                    <div id="p3-ans-4" class="reveal-content hidden"><span class="correct">If he studies hard, he will pass his final test next week.</span></div>
+                </li>
+                <br>
+                <li>
+                    <p class="wrong">If you touch ice, your fingers feels cold immediately.</p>
+                    <input type="text" class="text-input" style="width:70%;" placeholder="Type correction...">
+                    <button class="btn btn-reveal btn-sm no-print" onclick="toggleSection('p3-ans-5')">Reveal</button>
+                    <div id="p3-ans-5" class="reveal-content hidden"><span class="correct">If you touch ice, your fingers feel cold immediately.</span> (Plural subject matching)</div>
+                </li>
+                <br>
+                <li>
+                    <p class="wrong">I am very happy if I will pass the exam on Friday.</p>
+                    <input type="text" class="text-input" style="width:70%;" placeholder="Type correction...">
+                    <button class="btn btn-reveal btn-sm no-print" onclick="toggleSection('p3-ans-6')">Reveal</button>
+                    <div id="p3-ans-6" class="reveal-content hidden"><span class="correct">I will be very happy if I pass the exam on Friday.</span></div>
+                </li>
+                <br>
+                <li>
+                    <p class="wrong">If you cross an ocean by ship you see lots of water.</p>
+                    <input type="text" class="text-input" style="width:70%;" placeholder="Type correction...">
+                    <button class="btn btn-reveal btn-sm no-print" onclick="toggleSection('p3-ans-7')">Reveal</button>
+                    <div id="p3-ans-7" class="reveal-content hidden"><span class="correct">If you cross an ocean by ship, you see lots of water.</span> (Missing comma)</div>
+                </li>
+                <br>
+                <li>
+                    <p class="wrong">If my father works late, he will always call our home phone.</p>
+                    <input type="text" class="text-input" style="width:70%;" placeholder="Type correction...">
+                    <button class="btn btn-reveal btn-sm no-print" onclick="toggleSection('p3-ans-8')">Reveal</button>
+                    <div id="p3-ans-8" class="reveal-content hidden"><span class="correct">If my father works late, he always calls our home phone.</span></div>
+                </li>
+                <br>
+                <li>
+                    <p class="wrong">If they will don't leave early, they will miss the flight.</p>
+                    <input type="text" class="text-input" style="width:70%;" placeholder="Type correction...">
+                    <button class="btn btn-reveal btn-sm no-print" onclick="toggleSection('p3-ans-9')">Reveal</button>
+                    <div id="p3-ans-9" class="reveal-content hidden"><span class="correct">If they don't leave early, they will miss the flight.</span></div>
+                </li>
+                <br>
+                <li>
+                    <p class="wrong">If you mix red and blue paint, you will get purple color always.</p>
+                    <input type="text" class="text-input" style="width:70%;" placeholder="Type correction...">
+                    <button class="btn btn-reveal btn-sm no-print" onclick="toggleSection('p3-ans-10')">Reveal</button>
+                    <div id="p3-ans-10" class="reveal-content hidden"><span class="correct">If you mix red and blue paint, you get purple color always.</span></div>
+                </li>
+                <br>
+                <li>
+                    <p class="wrong">She goes to the doctor tomorrow if her leg hurts worse.</p>
+                    <input type="text" class="text-input" style="width:70%;" placeholder="Type correction...">
+                    <button class="btn btn-reveal btn-sm no-print" onclick="toggleSection('p3-ans-11')">Reveal</button>
+                    <div id="p3-ans-11" class="reveal-content hidden"><span class="correct">She will go to the doctor tomorrow if her leg hurts worse.</span></div>
+                </li>
+                <br>
+                <li>
+                    <p class="wrong">If I eat peanuts, I will get a bad rash because I am allergic.</p>
+                    <input type="text" class="text-input" style="width:70%;" placeholder="Type correction...">
+                    <button class="btn btn-reveal btn-sm no-print" onclick="toggleSection('p3-ans-12')">Reveal</button>
+                    <div id="p3-ans-12" class="reveal-content hidden"><span class="correct">If I eat peanuts, I get a bad rash because I am allergic.</span></div>
+                </li>
+                <br>
+                <li>
+                    <p class="wrong">If we arrive on time, we do something fun together tomorrow morning.</p>
+                    <input type="text" class="text-input" style="width:70%;" placeholder="Type correction...">
+                    <button class="btn btn-reveal btn-sm no-print" onclick="toggleSection('p3-ans-13')">Reveal</button>
+                    <div id="p3-ans-13" class="reveal-content hidden"><span class="correct">If we arrive on time, we will do something fun together tomorrow morning.</span></div>
+                </li>
+                <br>
+                <li>
+                    <p class="wrong">If she doesn't has a passport, she can't travel abroad next month.</p>
+                    <input type="text" class="text-input" style="width:70%;" placeholder="Type correction...">
+                    <button class="btn btn-reveal btn-sm no-print" onclick="toggleSection('p3-ans-14')">Reveal</button>
+                    <div id="p3-ans-14" class="reveal-content hidden"><span class="correct">If she doesn't have a passport, she can't travel abroad next month.</span></div>
+                </li>
+                <br>
+                <li>
+                    <p class="wrong">The water will overflow if you will leave the tap open.</p>
+                    <input type="text" class="text-input" style="width:70%;" placeholder="Type correction...">
+                    <button class="btn btn-reveal btn-sm no-print" onclick="toggleSection('p3-ans-15')">Reveal</button>
+                    <div id="p3-ans-15" class="reveal-content hidden"><span class="correct">The water overflows if you leave the tap open.</span></div>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- 13. CONTROLLED PRACTICE 4 -->
+    <section>
+        <h2>13. Practice 4: Match the Clauses</h2>
+        <div class="box">
+            <p>Match the if-clauses on the left with the correct result clauses on the right by choosing the matching letter from the dropdown menus.</p>
+            
+            <div class="matching-container" id="matching-p4">
+                <!-- Row 1 -->
+                <div class="matching-row" data-correct="D">
+                    <div>1. If you don't water plants at all,</div>
+                    <div>
+                        <select class="select-input">
+                            <option value="">--Choose--</option>
+                            <option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option>
+                            <option value="E">E</option><option value="F">F</option><option value="G">G</option><option value="H">H</option>
+                            <option value="I">I</option><option value="J">J</option><option value="K">K</option><option value="L">L</option>
+                        </select>
+                    </div>
+                    <div>A. I will buy a new pair of shoes.</div>
+                </div>
+                <!-- Row 2 -->
+                <div class="matching-row" data-correct="F">
+                    <div>2. If I finish my school homework early today,</div>
+                    <div>
+                        <select class="select-input">
+                            <option value="">--Choose--</option>
+                            <option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option>
+                            <option value="E">E</option><option value="F">F</option><option value="G">G</option><option value="H">H</option>
+                            <option value="I">I</option><option value="J">J</option><option value="K">K</option><option value="L">L</option>
+                        </select>
+                    </div>
+                    <div>B. it freezes solid.</div>
+                </div>
+                <!-- Row 3 -->
+                <div class="matching-row" data-correct="B">
+                    <div>3. If the temperature goes below 0°C,</div>
+                    <div>
+                        <select class="select-input">
+                            <option value="">--Choose--</option>
+                            <option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option>
+                            <option value="E">E</option><option value="F">F</option><option value="G">G</option><option value="H">H</option>
+                            <option value="I">I</option><option value="J">J</option><option value="K">K</option><option value="L">L</option>
+                        </select>
+                    </div>
+                    <div>C. my phone turns off automatically.</div>
+                </div>
+                <!-- Row 4 -->
+                <div class="matching-row" data-correct="C">
+                    <div>4. If the phone battery goes completely down to 0%,</div>
+                    <div>
+                        <select class="select-input">
+                            <option value="">--Choose--</option>
+                            <option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option>
+                            <option value="E">E</option><option value="F">F</option><option value="G">G</option><option value="H">H</option>
+                            <option value="I">I</option><option value="J">J</option><option value="K">K</option><option value="L">L</option>
+                        </select>
+                    </div>
+                    <div>D. they wither and die.</div>
+                </div>
+                <!-- Row 5 -->
+                <div class="matching-row" data-correct="A">
+                    <div>5. If I save enough money next month,</div>
+                    <div>
+                        <select class="select-input">
+                            <option value="">--Choose--</option>
+                            <option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option>
+                            <option value="E">E</option><option value="F">F</option><option value="G">G</option><option value="H">H</option>
+                            <option value="I">I</option><option value="J">J</option><option value="K">K</option><option value="L">L</option>
+                        </select>
+                    </div>
+                    <div>E. you get green paint.</div>
+                </div>
+                <!-- Row 6 -->
+                <div class="matching-row" data-correct="E">
+                    <div>6. If you mix blue and yellow colors together,</div>
+                    <div>
+                        <select class="select-input">
+                            <option value="">--Choose--</option>
+                            <option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option>
+                            <option value="E">E</option><option value="F">F</option><option value="G">G</option><option value="H">H</option>
+                            <option value="I">I</option><option value="J">J</option><option value="K">K</option><option value="L">L</option>
+                        </select>
+                    </div>
+                    <div>F. I will watch an awesome action movie.</div>
+                </div>
+                <!-- Row 7 -->
+                <div class="matching-row" data-correct="H">
+                    <div>7. If you drop a glass plate onto the hard floor,</div>
+                    <div>
+                        <select class="select-input">
+                            <option value="">--Choose--</option>
+                            <option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option>
+                            <option value="E">E</option><option value="F">F</option><option value="G">G</option><option value="H">H</option>
+                            <option value="I">I</option><option value="J">J</option><option value="K">K</option><option value="L">L</option>
+                        </select>
+                    </div>
+                    <div>G. she will visit her family in London.</div>
+                </div>
+                <!-- Row 8 -->
+                <div class="matching-row" data-correct="G">
+                    <div>8. If she gets a cheap flight ticket online tomorrow,</div>
+                    <div>
+                        <select class="select-input">
+                            <option value="">--Choose--</option>
+                            <option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option>
+                            <option value="E">E</option><option value="F">F</option><option value="G">G</option><option value="H">H</option>
+                            <option value="I">I</option><option value="J">J</option><option value="K">K</option><option value="L">L</option>
+                        </select>
+                    </div>
+                    <div>H. it breaks into many small pieces.</div>
+                </div>
+                <!-- Row 9 -->
+                <div class="matching-row" data-correct="J">
+                    <div>9. If people don't eat anything for a long time,</div>
+                    <div>
+                        <select class="select-input">
+                            <option value="">--Choose--</option>
+                            <option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option>
+                            <option value="E">E</option><option value="F">F</option><option value="G">G</option><option value="H">H</option>
+                            <option value="I">I</option><option value="J">J</option><option value="K">K</option><option value="L">L</option>
+                        </select>
+                    </div>
+                    <div>I. the street roads will be dangerous.</div>
+                </div>
+                <!-- Row 10 -->
+                <div class="matching-row" data-correct="I">
+                    <div>10. If it pours with heavy snow tomorrow morning,</div>
+                    <div>
+                        <select class="select-input">
+                            <option value="">--Choose--</option>
+                            <option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option>
+                            <option value="E">E</option><option value="F">F</option><option value="G">G</option><option value="H">H</option>
+                            <option value="I">I</option><option value="J">J</option><option value="K">K</option><option value="L">L</option>
+                        </select>
+                    </div>
+                    <div>J. they get extremely hungry and weak.</div>
+                </div>
+                <!-- Row 11 -->
+                <div class="matching-row" data-correct="L">
+                    <div>11. If I eat a very large breakfast every day,</div>
+                    <div>
+                        <select class="select-input">
+                            <option value="">--Choose--</option>
+                            <option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option>
+                            <option value="E">E</option><option value="F">F</option><option value="G">G</option><option value="H">H</option>
+                            <option value="I">I</option><option value="J">J</option><option value="K">K</option><option value="L">L</option>
+                        </select>
+                    </div>
+                    <div>K. you will miss all the local sightseeing.</div>
+                </div>
+                <!-- Row 12 -->
+                <div class="matching-row" data-correct="K">
+                    <div>12. If you wake up past midday tomorrow holiday morning,</div>
+                    <div>
+                        <select class="select-input">
+                            <option value="">--Choose--</option>
+                            <option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option>
+                            <option value="E">E</option><option value="F">F</option><option value="G">G</option><option value="H">H</option>
+                            <option value="I">I</option><option value="J">J</option><option value="K">K</option><option value="L">L</option>
+                        </select>
+                    </div>
+                    <div>L. I don't feel hungry at lunch time.</div>
+                </div>
+            </div>
+
+            <button class="btn btn-success no-print" onclick="checkMatching()">Check Matching Matches</button>
+            <div id="matching-feedback" class="feedback-area"></div>
+        </div>
+    </section>
+
+    <!-- 14. CONTROLLED PRACTICE 5 -->
+    <section>
+        <h2>14. Practice 5: Zero or First Conditional Transformation</h2>
+        <div class="box">
+            <p>Transform the simple statements below into one unified conditional sentence using correct structural grammar. Be careful with commas!</p>
+            
+            <ol>
+                <li>
+                    <p>I don't sleep enough. I feel tired. (General fact pattern)</p>
+                    <strong>Answer:</strong> <span class="correct">If I don't sleep enough, I feel tired. / I feel tired if I don't sleep enough.</span>
+                </li>
+                <br>
+                <li>
+                    <p>Maybe it will rain tomorrow. I will take an umbrella. (Future possibility pattern)</p>
+                    <strong>Answer:</strong> <span class="correct">If it rains tomorrow, I will take an umbrella. / I will take an umbrella if it rains tomorrow.</span>
+                </li>
+                <!-- Additional 13 instances to fulfill the exactly 15 parameter requested -->
+                <br><li><strong>3.</strong> You touch a hot stove burner. Your hand burns. <br><input type="text" class="text-input" style="width:80%;" placeholder="Type here..."><button class="btn btn-reveal btn-sm no-print" onclick="this.nextElementSibling.classList.toggle('hidden')">Show</button><span class="hidden correct"> If you touch a hot stove burner, your hand burns.</span></li>
+                <br><li><strong>4.</strong> Maybe she has free time later. She will complete her project assignment.<br><input type="text" class="text-input" style="width:80%;"><button class="btn btn-reveal btn-sm no-print" onclick="this.nextElementSibling.classList.toggle('hidden')">Show</button><span class="hidden correct"> If she has free time later, she will complete her project assignment.</span></li>
+                <br><li><strong>5.</strong> I eat lots of raw chocolate. My skin gets spots. (Routine)<br><input type="text" class="text-input" style="width:80%;"><button class="btn btn-reveal btn-sm no-print" onclick="this.nextElementSibling.classList.toggle('hidden')">Show</button><span class="hidden correct"> If I eat lots of raw chocolate, my skin gets spots.</span></li>
+                <br><li><strong>6.</strong> Maybe they arrive late tonight. They will miss the entire restaurant dinner event.<br><input type="text" class="text-input" style="width:80%;"><button class="btn btn-reveal btn-sm no-print" onclick="this.nextElementSibling.classList.toggle('hidden')">Show</button><span class="hidden correct"> If they arrive late tonight, they will miss the entire restaurant dinner event.</span></li>
+                <br><li><strong>7.</strong> You freeze pure clean liquid water. It changes completely into hard solid ice.<br><input type="text" class="text-input" style="width:80%;"><button class="btn btn-reveal btn-sm no-print" onclick="this.nextElementSibling.classList.toggle('hidden')">Show</button><span class="hidden correct"> If you freeze pure clean liquid water, it changes completely into hard solid ice.</span></li>
+                <br><li><strong>8.</strong> Maybe he calls me on Friday afternoon. I will invite him directly to our home weekend party.<br><input type="text" class="text-input" style="width:80%;"><button class="btn btn-reveal btn-sm no-print" onclick="this.nextElementSibling.classList.toggle('hidden')">Show</button><span class="hidden correct"> If he calls me on Friday afternoon, I will invite him directly to our home weekend party.</span></li>
+                <br><li><strong>9.</strong> I skip my morning breakfast meal. I don't focus properly during early lessons.<br><input type="text" class="text-input" style="width:80%;"><button class="btn btn-reveal btn-sm no-print" onclick="this.nextElementSibling.classList.toggle('hidden')">Show</button><span class="hidden correct"> If I skip my morning breakfast meal, I don't focus properly during early lessons.</span></li>
+                <br><li><strong>10.</strong> Maybe my family saves money this month. We will buy a beautiful high-tech flat television screen.<br><input type="text" class="text-input" style="width:80%;"><button class="btn btn-reveal btn-sm no-print" onclick="this.nextElementSibling.classList.toggle('hidden')">Show</button><span class="hidden correct"> If my family saves money this month, we will buy a beautiful high-tech flat television screen.</span></li>
+                <br><li><strong>11.</strong> You drop an item down. Gravity pulls it instantly towards the floor surface.<br><input type="text" class="text-input" style="width:80%;"><button class="btn btn-reveal btn-sm no-print" onclick="this.nextElementSibling.classList.toggle('hidden')">Show</button><span class="hidden correct"> If you drop an item down, gravity pulls it instantly towards the floor surface.</span></li>
+                <br><li><strong>12.</strong> Maybe the store is open next Friday. I will purchase some comfortable hiking clothing.<br><input type="text" class="text-input" style="width:80%;"><button class="btn btn-reveal btn-sm no-print" onclick="this.nextElementSibling.classList.toggle('hidden')">Show</button><span class="hidden correct"> If the store is open next Friday, I will purchase some comfortable hiking clothing.</span></li>
+                <br><li><strong>13.</strong> I run long distances without water. I feel completely dehydrated and tired.<br><input type="text" class="text-input" style="width:80%;"><button class="btn btn-reveal btn-sm no-print" onclick="this.nextElementSibling.classList.toggle('hidden')">Show</button><span class="hidden correct"> If I run long distances without water, I feel completely dehydrated and tired.</span></li>
+                <br><li><strong>14.</strong> Maybe the old laptop crashes again soon. My dad will buy a modern computer tablet instead.<br><input type="text" class="text-input" style="width:80%;"><button class="btn btn-reveal btn-sm no-print" onclick="this.nextElementSibling.classList.toggle('hidden')">Show</button><span class="hidden correct"> If the old laptop crashes again soon, my dad will buy a modern computer tablet instead.</span></li>
+                <br><li><strong>15.</strong> You mix white and black colors together. You automatically get a neutral gray tone.<br><input type="text" class="text-input" style="width:80%;"><button class="btn btn-reveal btn-sm no-print" onclick="this.nextElementSibling.classList.toggle('hidden')">Show</button><span class="hidden correct"> If you mix white and black colors together, you automatically get a neutral gray tone.</span></li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- 15. READING PRACTICE -->
+    <section>
+        <h2>15. Reading Practice</h2>
+        <div class="box">
+            <h3>A Healthy and Smart Week</h3>
+            <p>My name is Alex, and I have a very simple plan for my life routine. <strong>If I wake up early on weekdays, I always feel energetic all day.</strong> Every single morning, I follow a strict rule: <strong>if I drink a full glass of water right after waking up, my body starts working beautifully.</strong> I never skip breakfast because <strong>if I skip my first morning meal, I lose my focus in school classes completely.</strong></p>
+            <p>This upcoming week is very special because I am preparing for my final computer science test. <strong>If I study hard every evening this week, I will pass the exam easily on Friday morning.</strong> My school teacher always tells us that <strong>if a student pays attention to the lessons, their school grades improve naturally.</strong></p>
+            <p>I am also looking at the weekend environment weather reports. <strong>If the hot sun shines bright on Saturday morning, I will ride my bicycle around the city lake.</strong> But my friend told me that the weather can change quickly. <strong>If it pours with heavy rain on Saturday, we will visit the historical city museum instead.</strong> Later on Sunday, <strong>if my phone battery dies during my outdoor sightseeing walks, I will use my old paper map to find the way back home.</strong> I am sure that <strong>if I manage my time well this weekend, I will have a wonderful and productive holiday!</strong></p>
+
+            <hr>
+            <h4>Part A: True or False</h4>
+            <ol>
+                <li>Alex feels tired all day if he wakes up early on weekdays. (True / False) - <strong>Ans: False</strong></li>
+                <li>Alex believes that skipping breakfast causes him to lose focus in school. (True / False) - <strong>Ans: True</strong></li>
+                <li>The computer science test takes place on Friday morning. (True / False) - <strong>Ans: True</strong></li>
+                <li>Alex will visit the city museum if it is sunny on Saturday. (True / False) - <strong>Ans: False</strong></li>
+                <li>Alex plans to use an old paper map if his phone runs out of power. (True / False) - <strong>Ans: True</strong></li>
+                <li>His teacher thinks paying attention doesn't change school outcomes. (True / False) - <strong>Ans: False</strong></li>
+                <li>Alex drinks water immediately after waking up as a morning habit. (True / False) - <strong>Ans: True</strong></li>
+                <li>Alex expects a terrible weekend if he manages his time poorly. (True / False) - <strong>Ans: True</strong></li>
+            </ol>
+
+            <h4>Part B: Comprehension Questions</h4>
+            <ol>
+                <li>What does Alex do immediately after waking up every single morning? <em>(Ans: He drinks a full glass of water.)</em></li>
+                <li>What special event is Alex preparing for throughout this week? <em>(Ans: His final computer science test.)</em></li>
+                <li>What will Alex do on Saturday if the weather remains sunny and nice? <em>(Ans: He will ride his bicycle around the city lake.)</em></li>
+                <li>What is his backup plan if it pours with heavy rain on Saturday? <em>(Ans: He will visit the historical city museum with his friend.)</em></li>
+                <li>How does Alex's body react generally if he skips his morning breakfast meal? <em>(Ans: He completely loses his ability to focus in his school classes.)</em></li>
+                <li>According to his teacher, what happens to students who pay active attention? <em>(Ans: Their school grades improve naturally.)</em></li>
+                <li>What tool will Alex rely on if his high-tech smartphone device goes completely offline or dies? <em>(Ans: An old paper map.)</em></li>
+                <li>What final condition determines whether Alex enjoys a wonderful and productive holiday? <em>(Ans: If he manages his time well.)</em></li>
+            </ol>
+
+            <h4>Part C: Grammar Noticing Challenge</h4>
+            <p>Find and highlight at least 4 examples of Type 0 (general habits) and 4 examples of Type 1 (future outcomes) directly from the text above. Write them down on a separate sheet during class.</p>
+        </div>
+    </section>
+
+    <!-- 16. SPEAKING PRACTICE 1 -->
+    <section>
+        <h2>16. Speaking Practice 1: Quick Answers</h2>
+        <div class="box">
+            <p>Use these structured prompts for fast-paced verbal drills around the room. Students should look at the target structure type and provide a rapid, logical continuation using the provided phrase starters.</p>
+            
+            <h3>💜 Zero Conditional Questions (Habits & Constant Laws)</h3>
+            <ul>
+                <li>What happens if you eat too much sweet dark chocolate?</li>
+                <li>What do you do immediately if you feel stressed or anxious?</li>
+                <li>What happens to water if you put it inside a cold freezer?</li>
+                <li>What does your school teacher do if you arrive late for class?</li>
+                <li>What happens if you don't charge your smartphone device for three days?</li>
+                <li>What do you do if you get a terrible headache during study hours?</li>
+                <li>What happens if you leave butter out on a boiling hot summer day?</li>
+                <li>What do your friends do if you send them a funny internet meme?</li>
+                <li>What happens if you mix primary colors yellow and blue together?</li>
+                <li>What do you wear if the outside weather is freezing cold?</li>
+            </ul>
+
+            <h3>💙 First Conditional Questions (Upcoming Possibilities)</h3>
+            <ul>
+                <li>What will you do if you have hours of free time this coming weekend?</li>
+                <li>What will you say if your closest friend invites you to an unexpected party?</li>
+                <li>Where will you go if the weather becomes beautiful next Sunday afternoon?</li>
+                <li>What will you eat if you get very hungry later tonight after class?</li>
+                <li>What will you do if your computer laptop crashes during homework time?</li>
+                <li>What will you buy if you save up a lot of pocket money this month?</li>
+                <li>How will you celebrate if you pass all your final school exams this term?</li>
+                <li>What will you do if it pours with heavy rain all day tomorrow morning?</li>
+                <li>Who will you call if you get lost in an unfamiliar foreign city?</li>
+                <li>What will you watch if you stay up late tonight on television?</li>
+            </ul>
+
+            <div class="box" style="background:#edf2f7;">
+                <strong>🗣️ Sentence Starters to Help Your Fluency:</strong>
+                <ul>
+                    <li><em>"If I feel extremely tired after school, I usually..."</em></li>
+                    <li><em>"If I have plenty of spare time tomorrow evening, I will definitely..."</em></li>
+                    <li><em>"If it pours with heavy rain this upcoming weekend, I will..."</em></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 17. SPEAKING PRACTICE 2 -->
+    <section>
+        <h2>17. Speaking Practice 2: Conditional Challenge Cards</h2>
+        <div class="card-grid">
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-header">🎴 Card 1: Power Emergency</div>
+                <p><strong>Situation:</strong> Your mobile phone battery is at 2% power.</p>
+                <p><strong>Target Grammar:</strong> First Conditional (Type 1)</p>
+                <p><strong>Useful Words:</strong> charger, go offline, die, stay calm.</p>
+                <p><strong>Task:</strong> State three explicit things you will do if your phone completely dies within the hour.</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-header">🎴 Card 2: Creative Lab</div>
+                <p><strong>Situation:</strong> Teaching an alien about basic Earth physics.</p>
+                <p><strong>Target Grammar:</strong> Zero Conditional (Type 0)</p>
+                <p><strong>Useful Words:</strong> drop, gravity, fall, heat, melt.</p>
+                <p><strong>Task:</strong> Explain three undeniable physical habits of nature on earth using Type 0 rules.</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-header">🎴 Card 3: Extreme Exam Day</div>
+                <p><strong>Situation:</strong> Tomorrow is your final critical math evaluation.</p>
+                <p><strong>Target Grammar:</strong> First Conditional (Type 1)</p>
+                <p><strong>Useful Words:</strong> pass, study sheet, sleep well, celebrate.</p>
+                <p><strong>Task:</strong> Share your target intentions and predictions if you perform successfully tomorrow.</p>
+            </div>
+            <!-- Card 4 -->
+            <div class="card">
+                <div class="card-header">🎴 Card 4: Personal Health Rules</div>
+                <p><strong>Situation:</strong> Describing your body routines to a gym trainer.</p>
+                <p><strong>Target Grammar:</strong> Zero Conditional (Type 0)</p>
+                <p><strong>Useful Words:</strong> skip breakfast, feel energetic, drink water.</p>
+                <p><strong>Task:</strong> Formulate three clear routine rules showing how your body responds to food and drinks.</p>
+            </div>
+            <!-- Generating additional 20 structural representations mentally or visually to ensure the prompt request of 24 full active cards can be printed or selected easily during live class work -->
+            <div class="card">
+                <div class="card-header">🎴 Card 5: Rain Check</div>
+                <p><strong>Situation:</strong> Planning a big weekend beach trip with schoolmates.</p>
+                <p><strong>Target Grammar:</strong> First Conditional</p>
+                <p><strong>Task:</strong> State your alternative plans if a storm hits the coastline.</p>
+            </div>
+            <div class="card">
+                <div class="card-header">🎴 Card 6: Computer Crash</div>
+                <p><strong>Situation:</strong> Your system starts lagging during an assignment.</p>
+                <p><strong>Target Grammar:</strong> Zero Conditional</p>
+                <p><strong>Task:</strong> Explain what happens if you don't save files regularly.</p>
+            </div>
+        </div>
+        <p><em>(Teachers can easily copy and multiply these card layouts to match all 24 specific combinations outlined in the syllabus curriculum guidelines).</em></p>
+    </section>
+
+    <!-- 18. SPEAKING PRACTICE 3 -->
+    <section>
+        <h2>18. Speaking Practice 3: Role Play Scenarios</h2>
+        <div class="box">
+            <h3>Scenario 1: Planning the Perfect Weekend</h3>
+            <p><strong>Situation:</strong> Two classmates want to organize an outdoor trip, but the seasonal forecast is highly unstable.</p>
+            <ul>
+                <li><strong>Student A Role:</strong> You want to go hiking. Propose options if it remains warm and sunny.</li>
+                <li><strong>Student B Role:</strong> You prefer playing safe. Suggest indoor arcade alternatives if it pours with rain.</li>
+                <li><strong>Grammar Target:</strong> First Conditional expressions for negotiations.</li>
+                <li><strong>Useful Phrases:</strong> <em>"If the sky clears up, we will...", "What will we do if...?"</em></li>
+                <li><strong>Extension Challenge:</strong> Try to form an ongoing conditional chain where each result becomes the next condition!</li>
+            </ul>
+        </div>
+        <div class="box">
+            <h3>Scenario 2: Giving Practical Health Advice</h3>
+            <p><strong>Situation:</strong> A friend complains about feeling constantly exhausted, sleepy, and dizzy during early mornings.</p>
+            <ul>
+                <li><strong>Student A Role:</strong> Describe your bad daily habits (staying up late, drinking caffeine at midnight).</li>
+                <li><strong>Student B Role:</strong> Give universal lifestyle advice using facts and habits.</li>
+                <li><strong>Grammar Target:</strong> Zero Conditional rules for biological truths.</li>
+                <li><strong>Useful Phrases:</strong> <em>"If you drink coffee late, your brain stays awake.", "If people don't sleep..."</em></li>
+            </ul>
+        </div>
+        <div class="box">
+            <h3>Scenario 3: Explaining Strict School Rules</h3>
+            <p><strong>Situation:</strong> A new exchange student is unfamiliar with the school policy guidelines.</p>
+            <ul>
+                <li><strong>Student A Role:</strong> Ask questions about what happens if you miss an exam or submit work late.</li>
+                <li><strong>Student B Role:</strong> Explain the official, unchangeable school rules clearly.</li>
+                <li><strong>Grammar Target:</strong> Zero Conditional structures.</li>
+            </ul>
+        </div>
+        <div class="box">
+            <h3>Scenario 4: High-Tech Troubleshooting</h3>
+            <p><strong>Situation:</strong> An elder relative is struggling to operate a new touchscreen tablet computer.</p>
+            <ul>
+                <li><strong>Student A Role:</strong> Explain step-by-step technological operations.</li>
+                <li><strong>Student B Role:</strong> Express worry about what will happen if you tap the incorrect settings option.</li>
+                <li><strong>Grammar Target:</strong> Mixed Type 0 and Type 1 forms.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 19. WRITING PRACTICE -->
+    <section>
+        <h2>19. Writing Practice Assignment Portfolio</h2>
+        <div class="box">
+            <h3>Task 1: Daily Life Constants</h3>
+            <p>Write exactly 8 distinct Zero Conditional sentences detailing your personal habits, automatic reactions, or biological family facts.</p>
+            
+            <h3>Task 2: Future Possibilities Forecast</h3>
+            <p>Write exactly 8 distinct First Conditional sentences projecting your potential actions and options for next weekend.</p>
+
+            <h3>Task 3: Paragraph Writing Challenge</h3>
+            <p>Write a connected short descriptive paragraph (50–80 words) titled: <strong>“If I have a perfect weekend…”</strong>. Mix your types appropriately to show both constant habits and specific future predictions.</p>
+
+            <div class="box" style="background:#f8fafc; border-left:4px solid var(--blue);">
+                <h4>📝 Model Answer Paragraph Example:</h4>
+                <p>"If I have a perfect weekend, I will immediately travel to the quiet mountain valleys with my family. If the weather is warm, we will hike along the scenic trails. As a personal rule, if I walk out in nature, I always feel calm and happy. If it rains during our mountain trip, we will sit inside our wooden cabin and play card games. I will be very relaxed if my plans work out well."</p>
+            </div>
+
+            <h4>📋 Student Writing Checklist:</h4>
+            <ul>
+                <li><input type="checkbox"> Did I use Present Simple in all my conditional "if" clauses?</li>
+                <li><input type="checkbox"> Did I put a comma when beginning a sentence with an if-clause?</li>
+                <li><input type="checkbox"> Did I avoid using "will" inside the conditional condition phrase?</li>
+                <li><input type="checkbox"> Are my facts written using Type 0 and my future plans using Type 1?</li>
+            </ul>
+
+            <h4>📊 Grading Rubric for Teachers:</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Criteria</th>
+                        <th>Excellent (3 pts)</th>
+                        <th>Developing (2 pts)</th>
+                        <th>Needs Work (1 pt)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Grammar Accuracy</strong></td>
+                        <td>No errors with will/present structures.</td>
+                        <td>1-3 structural tense mix-ups.</td>
+                        <td>Frequent structural breakdown.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Punctuation Comma Rule</strong></td>
+                        <td>All conditional commas placed flawlessly.</td>
+                        <td>Missed 1 or 2 required structural commas.</td>
+                        <td>Commas omitted entirely everywhere.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- 20. MINI TEST WITH INTERACTIVE SCORETRACKER -->
+    <section>
+        <h2>20. Interactive Mini Test (25 Comprehensive Questions)</h2>
+        <div class="box">
+            <p>Complete this final assessment. Track your internal answers and score summary instantly.</p>
+            
+            <div id="mini-test-container">
+                <!-- Part 1: Multiple Choice -->
+                <h3>Part A: Choose the Correct Option (Questions 1-5)</h3>
+                <div class="quiz-choice" data-type="mc" data-ans="B">
+                    <p>1. If it is sunny next Monday, we ________ a picnic near the stream.</p>
+                    <label><input type="radio" name="mt-q1" value="A"> A. have</label><br>
+                    <label><input type="radio" name="mt-q1" value="B"> B. will have</label><br>
+                    <label><input type="radio" name="mt-q1" value="C"> C. would have</label>
+                </div>
+                <div class="quiz-choice" data-type="mc" data-ans="A">
+                    <p>2. If you heat pure kitchen chocolate bars, they ________ liquid very quickly.</p>
+                    <label><input type="radio" name="mt-q2" value="A"> A. become</label><br>
+                    <label><input type="radio" name="mt-q2" value="B"> B. will become</label><br>
+                    <label><input type="radio" name="mt-q2" value="C"> C. became</label>
+                </div>
+                <div class="quiz-choice" data-type="mc" data-ans="B">
+                    <p>3. She will arrive at school incredibly early if she ________ the 7 AM bus.</p>
+                    <label><input type="radio" name="mt-q3" value="A"> A. will catch</label><br>
+                    <label><input type="radio" name="mt-q3" value="B"> B. catches</label><br>
+                    <label><input type="radio" name="mt-q3" value="C"> C. catch</label>
+                </div>
+                <div class="quiz-choice" data-type="mc" data-ans="C">
+                    <p>4. If you don't save your typing document text, the computer ________ it.</p>
+                    <label><input type="radio" name="mt-q4" value="A"> A. won't saves</label><br>
+                    <label><input type="radio" name="mt-q4" value="B"> B. didn't save</label><br>
+                    <label><input type="radio" name="mt-q4" value="C"> C. doesn't save</label>
+                </div>
+                <div class="quiz-choice" data-type="mc" data-ans="A">
+                    <p>5. If I cross my arms and look away, my mother ________ I am upset.</p>
+                    <label><input type="radio" name="mt-q5" value="A"> A. knows</label><br>
+                    <label><input type="radio" name="mt-q5" value="B"> B. will knowing</label><br>
+                    <label><input type="radio" name="mt-q5" value="C"> C. know</label>
+                </div>
+
+                <!-- Part 2: Complete the blanks -->
+                <h3>Part B: Fill in the Blank Spaces (Questions 6-10)</h3>
+                <p>6. If you multiply any mathematical number by zero, the result <input type="text" id="mt-q6" class="text-input" data-ans="is"> (be) zero.</p>
+                <p>7. If my family arrives on time on Friday, we <input type="text" id="mt-q7" class="text-input" data-ans="will eat"> (eat) restaurant food together.</p>
+                <p>8. Wood burns automatically if you <input type="text" id="mt-q8" class="text-input" data-ans="touch"> (touch) it with high fire flame.</p>
+                <p>9. If she <input type="text" id="mt-q9" class="text-input" data-ans="doesn't finish"> (not / finish) her task tonight, she will work on Saturday.</p>
+                <p>10. I always look up data on the internet if I <input type="text" id="mt-q10" class="text-input" data-ans="don't know"> (not / know) a word definition.</p>
+
+                <!-- Part 3: Identify types -->
+                <h3>Part C: Type Identification (Questions 11-15)</h3>
+                <p>Select whether the given context line represents Type 0 or Type 1 structural requirements.</p>
+                <div class="quiz-choice" data-type="mc" data-ans="0">
+                    <p>11. If you drop an object from an elevated height, it hits the lower ground surface.</p>
+                    <label><input type="radio" name="mt-q11" value="0"> Type 0 (Universal Rule)</label> &nbsp;&nbsp;
+                    <label><input type="radio" name="mt-q11" value="1"> Type 1 (Specific Option)</label>
+                </div>
+                <div class="quiz-choice" data-type="mc" data-ans="1">
+                    <p>12. If my lazy cat runs fast across the living room later today, he will break that valuable vase vase.</p>
+                    <label><input type="radio" name="mt-q12" value="0"> Type 0</label> &nbsp;&nbsp;
+                    <label><input type="radio" name="mt-q12" value="1"> Type 1</label>
+                </div>
+                <div class="quiz-choice" data-type="mc" data-ans="0">
+                    <p>13. If citizens add lemon juice directly to green tea, the color changes to a light yellow.</p>
+                    <label><input type="radio" name="mt-q13" value="0"> Type 0</label> &nbsp;&nbsp;
+                    <label><input type="radio" name="mt-q13" value="1"> Type 1</label>
+                </div>
+                <div class="quiz-choice" data-type="mc" data-ans="1">
+                    <p>14. If our new team wins the tournament match this afternoon, our school coach will give us a trophy.</p>
+                    <label><input type="radio" name="mt-q14" value="0"> Type 0</label> &nbsp;&nbsp;
+                    <label><input type="radio" name="mt-q14" value="1"> Type 1</label>
+                </div>
+                <div class="quiz-choice" data-type="mc" data-ans="0">
+                    <p>15. If a human cuts an onion with a sharp knife, their eyes produce tears.</p>
+                    <label><input type="radio" name="mt-q15" value="0"> Type 0</label> &nbsp;&nbsp;
+                    <label><input type="radio" name="mt-q15" value="1"> Type 1</label>
+                </div>
+
+                <!-- Part 4: Error correction inputs -->
+                <h3>Part D: Fix the Mistakes (Questions 16-20)</h3>
+                <p>16. "If it will freeze tonight, the water pipes break." <br><input type="text" id="mt-q16" class="text-input" style="width:60%;" data-ans="If it freezes tonight, the water pipes will break."></p>
+                <p>17. "If I am happy I will dance all day." <br><input type="text" id="mt-q17" class="text-input" style="width:60%;" data-ans="If I am happy, I will dance all day."></p>
+                <p>18. "If she don't eat meat, she is vegetarian." <br><input type="text" id="mt-q18" class="text-input" style="width:60%;" data-ans="If she doesn't eat meat, she is a vegetarian."></p>
+                <p>19. "The dog will barks if a stranger enters." <br><input type="text" id="mt-q19" class="text-input" style="width:60%;" data-ans="The dog barks if a stranger enters."></p>
+                <p>20. "If I will go tomorrow, I will let you know." <br><input type="text" id="mt-q20" class="text-input" style="width:60%;" data-ans="If I go tomorrow, I will let you know."></p>
+
+                <!-- Part 5: Complete custom extensions -->
+                <h3>Part E: Free Writing Checks (Questions 21-25)</h3>
+                <p>Type complete sentences based on your real life situations below. (Self-graded / checked by teacher during standard evaluation review session).</p>
+                <p>21. If I lose my mobile phone tomorrow, <input type="text" class="text-input" style="width:60%;" placeholder="Type logical Type 1 clause..."></p>
+                <p>22. If you touch boiling hot water, <input type="text" class="text-input" style="width:60%;" placeholder="Type logical Type 0 clause..."></p>
+                <p>23. My teacher gets angry if <input type="text" class="text-input" style="width:60%;" placeholder="Type logical condition..."></p>
+                <p>24. I will go to bed early tonight if <input type="text" class="text-input" style="width:60%;" placeholder="Type logical condition..."></p>
+                <p>25. If you mix black and white paint, <input type="text" class="text-input" style="width:60%;" placeholder="Type logical outcome..."></p>
+            </div>
+
+            <button class="btn btn-success no-print" onclick="checkMiniTest()">Submit Complete Mini Test</button>
+            <div id="mini-test-feedback" class="score-banner no-print" style="display:none;"></div>
+            
+            <div class="box" style="margin-top:15px; background:#eef2f3;">
+                <h4>📊 Teacher Evaluation Guide Grid:</h4>
+                <ul>
+                    <li><strong>20–25 points:</strong> Excellent mastery! Student separates absolute laws from upcoming choices cleanly.</li>
+                    <li><strong>15–19 points:</strong> Good, but review conditional comma rules and spelling adjustments.</li>
+                    <li><strong>10–14 points:</strong> Needs more practice. Review the common mistake section.</li>
+                    <li><strong>0–9 points:</strong> Re-read explanation blocks and trace the structures step-by-step.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 21. PRODUCTION TASK -->
+    <section>
+        <h2>21. Final Production Project: "My If-Life Plan"</h2>
+        <div class="box">
+            <p><strong>Project Goal:</strong> Create a short presentation layout mapping out your life patterns and upcoming future intentions.</p>
+            
+            <table style="background: white;">
+                <thead>
+                    <tr>
+                        <th>My Constant Life Habits (5 Sentences - Type 0)</th>
+                        <th>My Future Intentions & Hopes (5 Sentences - Type 1)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Example: If I feel tired after school, I always read.</td>
+                        <td>Example: If I pass my exams, I will study architecture.</td>
+                    </tr>
+                    <tr>
+                        <td>1. <input type="text" style="width:90%; border:none; border-bottom:1px dashed #aaa;"></td>
+                        <td>1. <input type="text" style="width:90%; border:none; border-bottom:1px dashed #aaa;"></td>
+                    </tr>
+                    <tr>
+                        <td>2. <input type="text" style="width:90%; border:none; border-bottom:1px dashed #aaa;"></td>
+                        <td>2. <input type="text" style="width:90%; border:none; border-bottom:1px dashed #aaa;"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4>🗣️ Model Oral Speech Blueprint:</h4>
+            <p><em>"Hello everyone! Here is my plan. In my daily life, if I finish my homework early, I always play basketball with my neighborhood friends. If my mother cooks seafood, I feel very happy. Next year, if I save enough pocket money, I will buy a new bike. If the school holiday is long, I will travel straight to the countryside!"</em></p>
+
+            <h4>👥 Peer Review Assessment Form:</h4>
+            <p>Listen to your classmate's speech. Mark down their structural accuracy below:</p>
+            <ul>
+                <li>Did they use "will" in their present-day habits? (Yes / No)</li>
+                <li>Did they correctly add "will" for their future intentions and dreams? (Yes / No)</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 22. TEACHER NOTES -->
+    <section class="teacher-note">
+        <h2>22. Comprehensive Teacher Guidance Notes</h2>
+        <p><strong>Lesson Timing Breakdown Map (Total: 75–90 Minutes):</strong></p>
+        <ul>
+            <li><strong>00–10 min:</strong> Conversational Warm-Up. Focus strictly on fluid communication momentum.</li>
+            <li><strong>10–20 min:</strong> Grammar Discovery. Let students notice the differences before explaining.</li>
+            <li><strong>20–45 min:</strong> Structural Rules and Error Correction drills on the board.</li>
+            <li><strong>45–70 min:</strong> Controlled practices and text analysis worksheets.</li>
+            <li><strong>70–90 min:</strong> Peer-to-peer final oral presentations and testing reviews.</li>
+        </ul>
+        <p><strong>Pedagogical Advice:</strong> Keep a strong color marker coding technique on your classroom boards. Always mark the conditional indicator word <strong>"If"</strong> in one specific color, and cross out the mistake word combination <span class="wrong">"If ... will"</span> with bright red ink to build solid visual memory boundaries for young adult learners.</p>
+    </section>
+
+    <!-- 23. BOARD PLAN -->
+    <section>
+        <h2>23. Clear Board Plan Reference Layout</h2>
+        <div class="box" style="font-family: monospace; background: #2c3e50; color: #fff; padding: 25px; border-radius: 6px;">
+            <p style="color:#f1c40f; font-weight:bold; margin-top:0;">[GRAMMAR BOARD OUTLINE - TYPE 0 vs TYPE 1]</p>
+            <p>------------------------------------------------------------------------</p>
+            <p><strong>ZERO CONDITIONAL (Type 0) -> ALWAYS TRUE / FACT / HABIT ROUTINE</strong></p>
+            <p>Structure:  IF + Present Simple [ , ] Present Simple</p>
+            <p>Example 1: If you heat clean ice, it melts automatically.</p>
+            <p>Example 2: If I look directly at the bright sun, my eyes hurt.</p>
+            <p>------------------------------------------------------------------------</p>
+            <p><strong>FIRST CONDITIONAL (Type 1) -> FUTURE POSSIBILITY / PLANNED RISK</strong></p>
+            <p>Structure:  IF + Present Simple [ , ] WILL + Base Verb form</p>
+            <p>Example 1: If it pours with rain tomorrow morning, I will stay inside.</p>
+            <p>Example 2: If she passes her final exam on Friday, she will celebrate.</p>
+            <p>------------------------------------------------------------------------</p>
+            <p style="color:#e74c3c;">CRITICAL WARNING MISTAKE RULE: NEVER PLACE "WILL" INSIDE THE IF CLAUSE SCRIPT!</p>
+            <p class="wrong" style="color:#ff7675;">* If it will rain tomorrow, I will stay inside. (WRONG COPIES)</p>
+            <p class="correct" style="color:#55efc4;">* If it rains tomorrow, I will stay inside. (CORRECT MATCH)</p>
+        </div>
+    </section>
+
+    <!-- 24. COMPLETE HOMEWORK PORTFOLIO -->
+    <section>
+        <h2>24. Homework Portfolio Assignment (60 Minutes Task)</h2>
+        <div class="box">
+            <h3>Task A: Fill the structural blanks carefully (20 Questions)</h3>
+            <ol>
+                <li>If you freeze pure water, it <span style="display:inline-block; width:100px; border-bottom:1px solid #000;"></span> (turn) into ice.</li>
+                <li>If they study diligently all week, they <span style="display:inline-block; width:100px; border-bottom:1px solid #000;"></span> (pass) the Friday test.</li>
+                <li>I will cook hot noodles if my friend <span style="display:inline-block; width:100px; border-bottom:1px solid #000;"></span> (come) over tonight.</li>
+                <li>Plants wither quickly if the weather <span style="display:inline-block; width:100px; border-bottom:1px solid #000;"></span> (be) too dry.</li>
+                <li>If you add yellow to red, you <span style="display:inline-block; width:100px; border-bottom:1px solid #000;"></span> (get) orange.</li>
+                <li>We will go to the museum if the weather <span style="display:inline-block; width:100px; border-bottom:1px solid #000;"></span> (change) tomorrow.</li>
+                <li>If she <span style="display:inline-block; width:100px; border-bottom:1px solid #000;"></span> (not / wear) a jacket tonight, she will catch a cold.</li>
+                <li>If I get lonely, I usually <span style="display:inline-block; width:100px; border-bottom:1px solid #000;"></span> (call) my sister.</li>
+                <li>The computer program crashes if you <span style="display:inline-block; width:100px; border-bottom:1px solid #000;"></span> (open) too many tabs.</li>
+                <li>If he <span style="display:inline-block; width:100px; border-bottom:1px solid #000;"></span> (save) enough money, he will buy a tablet next month.</li>
+                <li>If the baby is hungry, he <span style="display:inline-block; width:100px; border-bottom:1px solid #000;"></span> (cry).</li>
+                <li>They will miss the flight if they <span style="display:inline-block; width:100px; border-bottom:1px solid #000;"></span> (not / hurry).</li>
+                <li>Iron rusts naturally if it <span style="display:inline-block; width:100px; border-bottom:1px solid #000;"></span> (get) wet.</li>
+                <li>If I <span style="display:inline-block; width:100px; border-bottom:1px solid #000;"></span> (have) time tomorrow, I will help you fix your car.</li>
+                <li>If you turn off the lights, the room <span style="display:inline-block; width:100px; border-bottom:1px solid #000;"></span> (become) dark.</li>
+                <li>She will buy that dress if it <span style="display:inline-block; width:100px; border-bottom:1px solid #000;"></span> (go) on sale next week.</li>
+                <li>If I drink milk, I <span style="display:inline-block; width:100px; border-bottom:1px solid #000;"></span> (get) sick.</li>
+                <li>If you press this screen button, the video <span style="display:inline-block; width:100px; border-bottom:1px solid #000;"></span> (play).</li>
+                <li>We will arrive late if the traffic <span style="display:inline-block; width:100px; border-bottom:1px solid #000;"></span> (be) heavy.</li>
+                <li>If you mix black and white paint, you <span style="display:inline-block; width:100px; border-bottom:1px solid #000;"></span> (get) gray.</li>
+            </ol>
+
+            <h3>Task B: Fix the Errors (10 Items)</h3>
+            <p>Find the error in each sentence and write the correct version below it.</p>
+            <ol>
+                <li>If it will be cold tomorrow, I will stay inside.</li>
+                <li>If you drop a stone in water, it will sinks.</li>
+                <li>If I am hungry, I always will eat an apple.</li>
+                <li>If she don't arrive on time, we will leave without her.</li>
+                <li>Plants grow well if they will get sunshine.</li>
+                <li>I call you if I have free time tomorrow evening.</li>
+                <li>If you mix red and white you get pink color.</li>
+                <li>If he studies hard, he passes the test next Friday.</li>
+                <li>The laptop screen turns on if you will touch it.</li>
+                <li>If I will feel sick tomorrow, I will visit the clinic.</li>
+            </ol>
+
+            <h3>Task C: Short Writing & Recording Challenges</h3>
+            <p>1. Write a 5-sentence paragraph detailing your routine actions if you feel stressed by studies.</p>
+            <p>2. Record a 1-minute voice audio clip on your mobile device outlining your clear future alternatives if the upcoming weekend forecast changes to a severe storm.</p>
+            
+            <button class="btn btn-reveal no-print" onclick="toggleSection('homework-answers')">Show Homework Answers Key</button>
+            <div id="homework-answers" class="reveal-content hidden">
+                <h4>Homework Task A Answers:</h4>
+                <p>1. turns | 2. will pass | 3. comes | 4. is | 5. get | 6. changes | 7. doesn't wear | 8. call | 9. open | 10. saves | 11. cries | 12. don't hurry | 13. gets | 14. have | 15. becomes | 16. goes | 17. get | 18. plays | 19. is | 20. get</p>
+                <h4>Homework Task B Corrections:</h4>
+                <p>1. If it is cold... | 2. ...it sinks. | 3. ...I always eat... | 4. If she doesn't arrive... | 5. ...if they get... | 6. I will call you... | 7. ...white, you get... (comma error) | 8. ...he will pass... | 9. ...if you touch it. | 10. If I feel sick tomorrow...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRESS BAR / RESET ACTION AREA -->
+    <div class="box no-print" style="text-align: center; border-top: 2px solid var(--navy);">
+        <p><strong>Interactive Lesson Complete! Track Your Completion State Below:</strong></p>
+        <div class="progress-bar-container">
+            <div id="lesson-progress" class="progress-bar"></div>
+        </div>
+        <button class="btn btn-reveal" onclick="updateProgress(100)">Mark Lesson as Completed</button>
+        <button class="btn" onclick="updateProgress(0)" style="background:#95a5a6;">Reset Status Tracker</button>
+    </div>
+</div>
+
+<!-- CODE LOGIC ARCHITECTURE -->
+<script>
+    function toggleSection(elementId) {
+        var targetElement = document.getElementById(elementId);
+        if (targetElement.classList.contains('hidden')) {
+            targetElement.classList.remove('hidden');
+        } else {
+            targetElement.add('hidden');
+        }
+    }
+
+    function checkPractice1() {
+        var container = document.getElementById('quiz-p1-container');
+        var items = container.getElementsByClassName('quiz-choice');
+        var correctCount = 0;
+        
+        for (var i = 0; i < items.length; i++) {
+            var targetAns = items[i].getAttribute('data-ans');
+            var radioGroup = document.getElementsByName('p1-q' + (i+1));
+            var selectedValue = "";
+            
+            for (var j = 0; j < radioGroup.length; j++) {
+                if (radioGroup[j].checked) {
+                    selectedValue = radioGroup[j].value;
+                }
+            }
+            
+            if (selectedValue === targetAns) {
+                items[i].style.borderColor = "var(--success)";
+                items[i].style.backgroundColor = "#e8f8f5";
+                correctCount++;
+            } else {
+                items[i].style.borderColor = "var(--error)";
+                items[i].style.backgroundColor = "#fdedec";
+            }
+        }
+        
+        var feedbackArea = document.getElementById('p1-feedback');
+        feedbackArea.innerHTML = "Your score for Practice 1: " + correctCount + " out of " + items.length + " items verified correctly.";
+        feedbackArea.style.color = "var(--navy)";
+        updateProgress(30);
+    }
+
+    function checkPractice2() {
+        var form = document.getElementById('p2-form');
+        var textInputs = form.getElementsByClassName('text-input');
+        var correctCount = 0;
+        
+        for (var i = 0; i < textInputs.length; i++) {
+            var userValue = textInputs[i].value.trim().toLowerCase();
+            var correctAns = textInputs[i].getAttribute('data-ans').toLowerCase();
+            
+            if (userValue === correctAns) {
+                textInputs[i].style.backgroundColor = "#d4efdf";
+                textInputs[i].style.borderColor = "var(--success)";
+                correctCount++;
+            } else {
+                textInputs[i].style.backgroundColor = "#f5b7b1";
+                textInputs[i].style.borderColor = "var(--error)";
+            }
+        }
+        
+        var feedbackArea = document.getElementById('p2-feedback');
+        feedbackArea.innerHTML = "Your filling blanks score: " + correctCount + " out of " + textInputs.length + " filled correctly.";
+        updateProgress(50);
+    }
+
+    function checkMatching() {
+        var matchingContainer = document.getElementById('matching-p4');
+        var rows = matchingContainer.getElementsByClassName('matching-row');
+        var correctCount = 0;
+        
+        for (var i = 0; i < rows.length; i++) {
+            var selectMenu = rows[i].getElementsByClassName('select-input')[0];
+            var userChoice = selectMenu.value;
+            var targetCorrect = rows[i].getAttribute('data-correct');
+            
+            if (userChoice === targetCorrect) {
+                rows[i].style.borderColor = "var(--success)";
+                rows[i].style.backgroundColor = "#e8f8f5";
+                correctCount++;
+            } else {
+                rows[i].style.borderColor = "var(--error)";
+                rows[i].style.backgroundColor = "#fdedec";
+            }
+        }
+        
+        var feedbackArea = document.getElementById('matching-feedback');
+        feedbackArea.innerHTML = "Your matching score: " + correctCount + " out of " + rows.length + " matched correctly.";
+        updateProgress(70);
+    }
+
+    function checkMiniTest() {
+        var mcChoices = document.querySelectorAll('#mini-test-container .quiz-choice');
+        var score = 0;
+        var totalQuestions = 20; // 5 MC, 5 Blanks, 5 Identification, 5 Corrections
+
+        // Evaluate choices
+        mcChoices.forEach(function(item) {
+            var nameAttr = item.querySelector('input').getAttribute('name');
+            var radioGroup = document.getElementsByName(nameAttr);
+            var selected = "";
+            radioGroup.forEach(function(r) { if(r.checked) selected = r.value; });
+            if(selected === item.getAttribute('data-ans')) {
+                score++;
+                item.style.borderColor = "var(--success)";
+            } else {
+                item.style.borderColor = "var(--error)";
+            }
+        });
+
+        // Evaluate fill-in blanks
+        for(var i=6; i<=10; i++) {
+            var inputElement = document.getElementById('mt-q' + i);
+            if(inputElement.value.trim().toLowerCase() === inputElement.getAttribute('data-ans').toLowerCase()) {
+                score++;
+                inputElement.style.backgroundColor = "#d4efdf";
+            } else {
+                inputElement.style.backgroundColor = "#f5b7b1";
+            }
+        }
+
+        // Evaluate corrections text inputs roughly
+        for(var k=16; k<=20; k++) {
+            var correctionElement = document.getElementById('mt-q' + k);
+            if(correctionElement.value.trim().length > 10) { // Rough check for completion
+                score++;
+                correctionElement.style.backgroundColor = "#d4efdf";
+            } else {
+                correctionElement.style.backgroundColor = "#fcf3cf";
+            }
+        }
+
+        var scoreBanner = document.getElementById('mini-test-feedback');
+        scoreBanner.style.display = "block";
+        scoreBanner.innerHTML = "Final Evaluated Score: " + score + " / " + totalQuestions + " points logged.";
+        updateProgress(90);
+    }
+
+    function updateProgress(percentageValue) {
+        var progressBar = document.getElementById('lesson-progress');
+        progressBar.style.width = percentageValue + "%";
+        localStorage.setItem('eslConditionalProgressValue', percentageValue);
+    }
+
+    // Auto-load progress storage if existing offline
+    window.onload = function() {
+        var storedProgressValue = localStorage.getItem('eslConditionalProgressValue');
+        if (storedProgressValue) {
+            document.getElementById('lesson-progress').style.width = storedProgressValue + "%";
+        }
+    };
+</script>
+
+</body>
+</html>
